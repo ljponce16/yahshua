@@ -1,0 +1,6 @@
+services:
+  yahshuaqatest:
+    image: yahshuaqatest
+    build:
+      context: .
+      dockerfile: ./Dockerfile
