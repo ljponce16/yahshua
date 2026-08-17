@@ -302,6 +302,114 @@ The Income Tax is ₱553.34 higher than the expected amount, resulting in an und
 Evidence
 ![alt text](evidence/bug8.png)
 
+## BUG 9
+
+Title: Newly Added Employee Appears at the Bottom of the Employee List
+
+Severity: Medium
+
+Steps to Reproduce:
+    1.Navigate to the PH Payroll Calculator Dashboard: http://localhost:3000/.
+    2.Under the Quick Links section, select Manage Employees.
+    3.Click the Add Employee button located in the upper-right corner of the page.
+    4.Add a new employee and save the record.
+    5.Return to the employee list and observe the newly added employee's position.
+
+Expected Result:
+The newly added employee should appear at the top of the employee list so that recently added employees are immediately visible.
+
+Actual Result:
+The newly added employee appears at the bottom of the employee list instead of being displayed at the top.
+
+Evidence:
+![alt text](evidence/bug9.png)
+
+## BUG 10
+
+Title: Avg Monthly Salary Tile Is Not Properly Aligned with Other Dashboard Tiles
+
+Severity: Medium
+
+Steps to Reproduce:
+    1.Navigate to the PH Payroll Calculator Dashboard: http://localhost:3000/.
+    2.Locate the dashboard summary tiles.
+    3.Compare the alignment of the Avg Monthly Salary tile with the other tiles.
+    4.Observe the position of the tile label and value.
+
+Expected Result:
+The Avg Monthly Salary label and value should be properly aligned and consistent with the layout and positioning of the other dashboard tiles.
+
+Actual Result:
+The Avg Monthly Salary label and value are not aligned consistently with the other dashboard tiles, resulting in an inconsistent visual layout.
+
+Evidence:
+![alt text](evidence/bug10.png)
+
+## BUG 11
+
+Title: Back Button Is Missing on Other Pages
+
+Severity: Medium
+
+Steps to Reproduce:
+    1.Navigate to the PH Payroll Calculator Dashboard: http://localhost:3000/.
+    2.Navigate to any other page, such as Manage Employees.
+    3.Check the page for a Back button or navigation option to return to the previous page.
+
+Expected Result:
+A Back button should be available on pages where users need to return to the previous page or dashboard.
+
+Actual Result:
+There is no Back button available when navigating to other pages, making it difficult for users to return to the previous page.
+
+Evidence:
+![alt text](evidence/bug11.png)
+
+## BUG 12
+
+Title: Sorting Is Limited to the Year Column
+
+Severity: Medium
+
+Steps to Reproduce:
+
+    1.Navigate to the PH Payroll Calculator Dashboard: http://localhost:3000/.
+    2.Navigate to the page containing the payroll or employee records table.
+    3.Try to sort the records using the available column headers.
+    4.Check whether sorting is available for other columns aside from Year.
+
+Expected Result:
+Sorting should be available for all applicable column headers, not just the Year column. Users should be able to sort records by other relevant fields, such as Employee Name, Salary, Department, Date, and other available columns.
+
+Actual Result:
+The sorting functionality is only available for the Year column. Other column headers cannot be used to sort the records.
+
+Evidence:
+![alt text](evidence/bug12.png)
+
+## BUG 13
+
+Title: Only One Payroll Result Is Displayed Per Employee When Filtering by Month and Year
+
+Severity: High
+
+Steps to Reproduce:
+
+    Navigate to the PH Payroll Calculator Dashboard: http://localhost:3000/.
+    Go to the page containing the payroll records.
+    Select a specific Month and Year using the available filters.
+    Review the payroll results displayed for each employee.
+    Check whether multiple payroll records for the selected period are displayed.
+
+Expected Result:
+The system should display all applicable payroll records for the selected Month and Year, including multiple records for the same employee if they exist.
+
+Actual Result:
+Only one payroll result per employee is displayed when a Month and Year are selected, even when multiple applicable payroll records exist.
+
+Evidence:
+![alt text](evidence/bug13a.png)
+![alt text](evidence/bug13b.png)
 
 ### Task 2: API Testing 
 
