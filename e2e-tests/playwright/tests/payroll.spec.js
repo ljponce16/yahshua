@@ -12,6 +12,42 @@ const { test, expect, request } = require('@playwright/test')
 const BASE_URL = 'http://localhost:3000'
 const API_URL = 'http://localhost:8000/api'
 
+test.describe('Philippine Payroll Calculator', () => {
+  test('Philippine Payroll Calculator should be displayed on the Dashboard', async ({ page }) => {
+    await page.goto('http://localhost:3000')
+    await expect(page.getByText('Philippine Payroll Calculator')).toBeVisible();
+  })
+})
+
+test.describe('Employees list', () => {
+  test('Add employee button should be displayed on the Employee list', async ({ page }) => {
+    await page.goto('http://localhost:3000/employees')
+    await expect(page.getByRole('heading', { name: 'Employees' })).toBeVisible();
+    await expect(page.getByRole('button', { name: '+ Add Employee' })).toBeVisible();
+  })
+
+  test('Clicking Edit button on the Employee list should display the Edit employee fields', async ({ page }) => {
+    await page.goto('http://localhost:3000/employees')
+    await page.getByRole('button', { name: 'Edit' }).first().click();
+    await expect(page.getByText('Edit Employee')).toBeVisible();
+    await expect(page.getByText('First Name *')).toBeVisible();
+    await expect(page.getByText('Last Name *')).toBeVisible();
+    await expect(page.getByText('Email *')).toBeVisible();
+    await expect(page.getByText('Position *')).toBeVisible();
+    await expect(page.getByText('Department *')).toBeVisible();
+    await expect(page.getByText('Employment Type *')).toBeVisible();
+    await expect(page.getByText('Monthly Salary (₱) *')).toBeVisible();
+    await expect(page.getByText('Date Hired *')).toBeVisible();
+  })
+})
+
+test.describe('Payroll Calculator', () => {
+  test('Payroll calculator text should be displayed on the Calculator page', async ({ page }) => {
+    await page.goto('http://localhost:3000/calculate')
+    await expect(page.getByRole('heading', { name: 'Payroll Calculator' })).toBeVisible();
+  })
+})
+
 test.describe('Dashboard', () => {
   test('loads and shows API status as Online', async ({ page }) => {
     await page.goto('/')
